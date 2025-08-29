@@ -1,0 +1,125 @@
+/* Background */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+/* Blurred gradient blobs */
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+  z-index: 0;
+}
+.blob.blue { background: #3b82f6; top: 10%; left: 10%; }
+.blob.pink { background: #ec4899; bottom: 10%; right: 15%; }
+.blob.purple { background: #8b5cf6; top: 40%; right: 5%; }
+
+/* Glass card wrapper */
+.app-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 720px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* Title */
+.app-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.app-subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+textarea, input {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+textarea::placeholder, input::placeholder {
+  color: #94a3b8;
+}
+
+/* Buttons */
+button {
+  border: none;
+  border-radius: 0.9rem;
+  padding: 0.9rem 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+}
+
+button + button {
+  margin-left: 0.8rem;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Result + History boxes inside card */
+.result-box, .history-item {
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  border-radius: 0.9rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.history-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.history-time {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
